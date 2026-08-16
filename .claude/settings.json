@@ -36,7 +36,17 @@
       "Bash(git status*)",
       "Bash(git diff*)",
       "Bash(git log*)",
-      "Bash(git show*)"
+      "Bash(git show*)",
+      "Bash(gh auth status*)",
+      "Bash(gh repo view*)",
+      "Bash(gh pr view*)",
+      "Bash(gh pr list*)",
+      "Bash(gh pr diff*)",
+      "Bash(gh pr status*)",
+      "Bash(gh issue view*)",
+      "Bash(gh issue list*)",
+      "Bash(gh run list*)",
+      "Bash(gh run view*)"
     ],
     "deny": [
       "Bash(rm -rf*)",
@@ -45,7 +55,10 @@
       "Bash(git push -f*)",
       "Bash(git reset --hard*)",
       "Bash(git clean -f*)",
-      "Bash(chmod 777*)"
+      "Bash(chmod 777*)",
+      "Bash(gh repo delete*)",
+      "Bash(gh release delete*)",
+      "Bash(gh auth token*)"
     ]
   }
 }
