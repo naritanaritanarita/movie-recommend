@@ -1,6 +1,6 @@
 ---
 name: filmarks-to-youtube
-description: output/filmarks/watched_movies.md の視聴済み映画データを使ってYouTube動画台本を自動生成するオーケストレーションスキル。movie-classifier → youtube-script-generator の2エージェントをパイプライン実行する。「Filmarksの観た映画からおすすめ何選の台本を作って」「視聴済みリストでYouTube動画を作りたい」「ホラーのおすすめ映画を選んで台本にして」「観た映画でYouTubeの企画を作りたい」のような要求には必ずこのスキルを使うこと。ジャンル・本数・テーマを指定していなくても、確認してからパイプラインを走らせれば良いので積極的にトリガーして。
+description: output/filmarks/watched_movies.md の視聴済み映画データを使ってYouTube動画台本を自動生成するオーケストレーションスキル。movie-classifier → youtube-script-generator の2エージェントをパイプライン実行する。「Filmarksの観た映画からおすすめ何選の台本を作って」「視聴済みリストでYouTube動画を作りたい」「ホラーのおすすめ映画を選んで台本にして」「観た映画でYouTubeの企画を作りたい」のような要求に使う。ジャンル・本数・テーマが未指定の場合はAskUserQuestionで確認してからパイプラインを実行する。
 argument-hint: "[ジャンル] [本数] [テーマ（任意）]"
 ---
 

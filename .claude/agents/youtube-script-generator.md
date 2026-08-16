@@ -1,6 +1,6 @@
 ---
 name: "youtube-script-generator"
-description: "分析結果（データ、調査結果、インサイト、または構造化された情報）とユーザー指定のテーマがある状態で、compelling なYouTube動画台本とタイトル案を生成する必要があるときに使うエージェント。\n\n使用例：\n\n<example>\nContext: ユーザーが市場分析を完了し、それをYouTube動画にしたい。\nuser: \"市場分析が完了しました。テーマは『2026年のAI市場トレンド』で、この分析結果を元にYoutube動画の台本とタイトル案を作成してください。分析結果：AI市場は前年比35%成長、生成AIが主要ドライバー、中小企業への普及が加速...\"\nassistant: \"Youtube動画台本・タイトル案を生成するためにyoutube-script-generatorエージェントを起動します。\"\n<commentary>\nユーザーが分析結果と指定テーマを持っているので、youtube-script-generatorエージェントを使って台本とタイトル案を作成する。\n</commentary>\n</example>\n\n<example>\nContext: ユーザーがアンケートを実施し、その結果をYouTube動画にしたい。\nuser: \"アンケート結果をまとめました。テーマ：『日本人の睡眠習慣』。結果：平均睡眠時間6.2時間、7割が睡眠不足を実感、スマホ使用が最大の原因。この内容でYoutube台本を作って\"\nassistant: \"了解しました。youtube-script-generatorエージェントを使って台本とタイトル案を生成します。\"\n<commentary>\nアンケートデータと指定テーマの組み合わせは典型的なユースケース。youtube-script-generatorエージェントを起動する。\n</commentary>\n</example>"
+description: "分析結果（データ、調査結果、インサイト、または構造化された情報）とユーザー指定のテーマがある状態で、compelling なYouTube動画台本とタイトル案を生成する必要があるときに使うエージェント。"
 model: sonnet
 color: red
 memory: project
