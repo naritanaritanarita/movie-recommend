@@ -28,20 +28,24 @@
       "Bash(mv*)",
       "Bash(chmod*)",
       "Bash(ps*)",
-      "Bash(env)",
-      "Bash(printenv*)",
       "Bash(jq*)",
       "Bash(sed*)",
       "Bash(awk*)",
-      "Bash(xargs*)",
       "Bash(tr*)",
-      "Bash(cut*)"
+      "Bash(cut*)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git show*)"
     ],
     "deny": [
       "Bash(rm -rf*)",
+      "Bash(rm -fr*)",
       "Bash(git push --force*)",
       "Bash(git push -f*)",
-      "Bash(git reset --hard*)"
+      "Bash(git reset --hard*)",
+      "Bash(git clean -f*)",
+      "Bash(chmod 777*)"
     ]
   }
 }
