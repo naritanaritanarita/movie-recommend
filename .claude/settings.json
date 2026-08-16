@@ -1,0 +1,47 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Write",
+      "WebFetch",
+      "Bash(ls*)",
+      "Bash(cat*)",
+      "Bash(grep*)",
+      "Bash(find*)",
+      "Bash(pwd)",
+      "Bash(echo*)",
+      "Bash(head*)",
+      "Bash(tail*)",
+      "Bash(which*)",
+      "Bash(whoami)",
+      "Bash(date)",
+      "Bash(uname*)",
+      "Bash(df*)",
+      "Bash(du*)",
+      "Bash(wc*)",
+      "Bash(sort*)",
+      "Bash(uniq*)",
+      "Bash(diff*)",
+      "Bash(touch*)",
+      "Bash(mkdir*)",
+      "Bash(cp*)",
+      "Bash(mv*)",
+      "Bash(chmod*)",
+      "Bash(ps*)",
+      "Bash(env)",
+      "Bash(printenv*)",
+      "Bash(jq*)",
+      "Bash(sed*)",
+      "Bash(awk*)",
+      "Bash(xargs*)",
+      "Bash(tr*)",
+      "Bash(cut*)"
+    ],
+    "deny": [
+      "Bash(rm -rf*)",
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(git reset --hard*)"
+    ]
+  }
+}

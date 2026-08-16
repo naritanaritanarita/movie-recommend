@@ -1,0 +1,1 @@
+- [Filmarks視聴済みページのHTMLパターン](project_html_patterns.md) — CSSクラス名と抽出セレクター（.c-content-item, h3.c-content-item__title等）
