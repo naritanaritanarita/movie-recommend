@@ -1,7 +1,7 @@
 ---
 name: "youtube-script-generator"
 description: "分析結果（データ、調査結果、インサイト、または構造化された情報）とユーザー指定のテーマがある状態で、compelling なYouTube動画台本とタイトル案を生成する必要があるときに使うエージェント。"
-model: sonnet
+model: opus
 color: red
 memory: project
 ---

@@ -1,7 +1,7 @@
 ---
 name: "movie-classifier"
 description: "ユーザーが映画リストを提供し、ジャンル別に分類して高評価作品を抽出したいときに使うエージェント。プレーンテキスト・CSV/TSV・JSONなど任意形式の映画リストを受け取り、ジャンル分類と高評価作品の抽出を行う。"
-model: sonnet
+model: opus
 color: blue
 memory: project
 ---
