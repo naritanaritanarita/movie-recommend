@@ -12,8 +12,14 @@ exit code: 0=合格 / 1=違反あり / 2=ファイル異常
 import re
 import sys
 
-SECTION_START = "## 📝 動画台本"
-SECTION_END = "## 💡 制作メモ"
+# 見出しは絵文字の有無に関わらず拾う（`## 動画台本` / `## 📝 動画台本` の両方に対応）
+RE_SECTION_START = re.compile(r"^##\s+\S*\s*動画台本")
+RE_SECTION_END = re.compile(r"^##\s+\S*\s*制作メモ")
+
+# 日本語ナレーションの発話速度（文字/分）。カジュアルな語りで概ね250〜350字/分。
+# 英語の 150〜200 words/min をそのまま文字数に当てはめると倍近く過大に出るので注意。
+CPM_SLOW = 250   # ゆっくりめ（間を多く取る）
+CPM_FAST = 350   # 速め（テンポよく喋る）
 
 # 台本本文で許可される非発話行
 RE_HEADING = re.compile(r"^###\s*【.+】")          # ### 【フック】(0〜30秒)
@@ -34,9 +40,9 @@ def extract_body(lines):
     """台本セクションの行を (行番号, 本文) で返す。"""
     start = end = None
     for i, line in enumerate(lines):
-        if start is None and line.startswith(SECTION_START):
+        if start is None and RE_SECTION_START.match(line):
             start = i + 1
-        elif start is not None and line.startswith(SECTION_END):
+        elif start is not None and RE_SECTION_END.match(line):
             end = i
             break
     if start is None:
@@ -59,7 +65,7 @@ def main():
 
     body = extract_body(lines)
     if body is None:
-        print(f"✗ 「{SECTION_START}」セクションが見つかりません", file=sys.stderr)
+        print("✗ 「## 動画台本」セクションが見つかりません", file=sys.stderr)
         return 2
 
     violations = []
@@ -69,18 +75,16 @@ def main():
         if not stripped or RE_HEADING.match(stripped) or RE_DIRECTION.match(stripped) \
                 or RE_SEPARATOR.match(stripped):
             continue
-        matched = False
         for pattern, label in CHECKS:
             if pattern.search(line):
                 violations.append((lineno, label, stripped))
-                matched = True
                 break
-        if not matched:
-            speech_chars += len(stripped)
+        # 違反行も発話量には数える（修正前後で文字数を比較できるようにするため）
+        speech_chars += len(stripped)
 
     print(f"検査対象: {path}")
     print(f"台本セクション: {len(body)}行 / 発話文字数: {speech_chars}字 "
-          f"(推定尺 {speech_chars // 200}〜{speech_chars // 150}分)")
+          f"(推定尺 {speech_chars / CPM_FAST:.1f}〜{speech_chars / CPM_SLOW:.1f}分)")
 
     if violations:
         print(f"\n✗ 不合格: {len(violations)}件の違反\n")

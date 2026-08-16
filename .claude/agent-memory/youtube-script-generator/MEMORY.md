@@ -1,1 +1,3 @@
 - [ユーザーの好みと台本スタイル](user_preferences.md) — カジュアルトーン・ネタバレ最小限・テロップ/BGM指示必須・タイトル案は多め（7案実績あり）
+- [台本本文の記法](feedback_script_notation.md) — 台本は読み上げ原稿。ラベル小見出し・箇条書き・太字は失格。情報整理は「繋ぎの発話」で行う
+- [台本リンターの運用](feedback_script_linter.md) — 保存後 check_script.py で exit 0 を確認してから報告。尺換算レートは実速度とズレる点に注意
